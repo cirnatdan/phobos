@@ -103,6 +103,11 @@ else version(DragonFlyBSD)
 {
     version = useSysctlbyname;
 }
+else version(NetBSD)
+{
+    version = useSysctlbyname;
+}
+
 
 version(Windows)
 {
@@ -177,6 +182,11 @@ else version(useSysctlbyname)
             auto nameStr = "hw.ncpu\0".ptr;
         }
         else version(DragonFlyBSD)
+        {
+            auto nameStr = "hw.ncpu\0".ptr;
+        }
+
+        else version(NetBSD)
         {
             auto nameStr = "hw.ncpu\0".ptr;
         }
